@@ -31,12 +31,18 @@ export function Chat({
   const [messagesContainerRef, messagesEndRef] =
     useScrollToBottom<HTMLDivElement>();
 
+    const [attachments, setAttachments] = useState<Array<Attachment>>([]);
+
   return (
-    <div className="flex flex-row justify-center h-full border-2 rounded-3xl">
-      <div className="flex flex-col justify-between w-full items-center gap-4">
-        <div
-          className={`flex flex-col gap-4 h-full items-center ${messages.length === 0 ? "max-w-[60vw]" : "w-[43vw]"} overflow-hidden overflow-y-scroll`}
-        >
+    <div className="flex flex-row justify-center pb-2 border rounded-2xl h-[90vh] ">
+    <div className="flex flex-col justify-between items-center gap-4">
+      <div
+        ref={messagesContainerRef}
+        className={`flex flex-col gap-4 h-full items-center overflow-y-scroll ${messages.length === 0 ? "max-w-[60vw]" : "w-[43vw]"}`}
+      >
+        {/* <div
+          className={`flex flex-col gap-4 h-full items-center overflow-y-auto ${messages.length === 0 ? "max-w-[60vw]" : "w-[43vw]"}`}
+        ></div> */}
           {/* <Overview /> */}
           {messages.length === 0 && "Show latest News on health"}
 
@@ -50,13 +56,14 @@ export function Chat({
             />
           ))}
         </div>
-
         <form className="flex flex-row gap-2 relative items-end px-4 mb-4 md:px-0">
           <MultimodalInput
             input={input}
             setInput={setInput}
             handleSubmit={handleSubmit}
             isLoading={isLoading}
+            attachments={attachments}
+            setAttachments={setAttachments}
             stop={stop}
             messages={messages}
             append={append}

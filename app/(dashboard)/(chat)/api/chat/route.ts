@@ -82,23 +82,23 @@ export async function POST(request: Request) {
 `,
       messages: coreMessages,
       tools: {
-        combinedQueryTool: {
-          description: "Refines the user's query and generates tool recommendations.",
+        symptomAnalysis: {
+          description: 'Analyze user-provided symptoms',
           parameters: z.object({
-            userQuery: z.string().describe("The original user query."),
+            symptoms: z.string().describe('A list of symptoms provided by the user'),
           }),
-          execute: async ({ userQuery }) => {
-            // Step 1: Refine the query
-            const refinedQuery = `${userQuery}`;
-    
-            // Step 2: Generate an answer based on the refined query
-            const answer = await generateRecommendations({ prompt: refinedQuery });
-    
-            return {
-              refinedQuery,
-              answer,
-            };
-          },
+        },
+        medicationInfo: {
+          description: 'Provide information about a medication',
+          parameters: z.object({
+            medicationName: z.string().describe('The name of the medication'),
+          }),
+        },
+        findNearbyClinics: {
+          description: 'Find nearby clinics or hospitals',
+          parameters: z.object({
+            location: z.string().describe('User\'s location'),
+          }),
         },
       },
       onFinish: async ({ responseMessages }) => {

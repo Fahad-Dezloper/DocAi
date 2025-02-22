@@ -61,6 +61,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Upload failed" }, { status: 500 });
     }
   } catch (error) {
+    console.log("error while uploading image", error);
     return NextResponse.json(
       { error: "Failed to process request" },
       { status: 500 },

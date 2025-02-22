@@ -24,7 +24,7 @@ const Layout = async ({ children }: {children: React.ReactNode}) => {
     <main className='flex gap-2 w-screen'>
       <DataProvider>
               <SidebarLeft user={session?.user} />
-                  <div className='w-full flex flex-col gap-2'>
+              <div className='w-full flex flex-col gap-2'>
                     <Navvv user={session?.user?.email} />
                       {children}
                   </div>

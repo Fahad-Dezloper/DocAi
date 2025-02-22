@@ -4,6 +4,21 @@ import { genSaltSync, hashSync } from "bcrypt-ts";
 
 import prisma from "@/lib/prisma"
 
+export async function getAllUser(){
+    try {
+        const res = await prisma.user.findMany({
+            where: {
+                role: "doctor"
+            }
+        });
+        console.log("response from server", res);
+        return res;
+    } catch (error) {
+        return new Response("error fetching user", {
+            status: 500,
+          });
+    }
+}
 export async function getUser(email: string){
     try{
         const res = await prisma.user.findFirst({
@@ -198,7 +213,6 @@ export async function saveProject({
     }
 }
 
-
 export async function deleteProject({ websiteLink, userId }: { websiteLink: string; userId: string }) {
     try {
         // Find the project
@@ -251,7 +265,6 @@ export async function deleteProject({ websiteLink, userId }: { websiteLink: stri
         return { success: false, message: "Failed to delete project" };
     }
 }
-
 
 export async function getProjectByLink({websiteLink}: {websiteLink: string}){
     try {
