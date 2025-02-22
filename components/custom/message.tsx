@@ -8,7 +8,7 @@ import { BotIcon, UserIcon } from "./icons";
 import { Markdown } from "./markdown";
 import MessageLoading from "./message-loading";
 import { PreviewAttachment } from "./preview-attachment";
-import ToolRecommendations from "../projectHunt/ToolRecommendations";
+import ToolRecommendations from "../dockAi/ToolRecommendations";
 
 export const Message = ({
   chatId,
@@ -23,7 +23,7 @@ export const Message = ({
 }) => {
   return (
     <motion.div
-      className={`flex flex-row gap-5 w-full first-of-type:pt-20`}
+      className={`flex flex-row gap-5 w-full h-full  first-of-type:pt-20`}
       initial={{ y: 5, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >

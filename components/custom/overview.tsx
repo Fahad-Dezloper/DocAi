@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { Suspense, useEffect, useState } from 'react';
 
-import { InfiniteCarousel } from "../projectHunt/InfiniteCarousel";
+import { InfiniteCarousel } from "../dockAi/InfiniteCarousel";
 import { CardSkeleton } from "../ui/CardSkeleton";
 
 interface Card {

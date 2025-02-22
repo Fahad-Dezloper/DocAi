@@ -17,7 +17,7 @@ import {
 import {DataProvider } from "@/provider/spaceContext"
 
 import MainPopover from "./main-popover"
-import { ProjectShowCase } from "./projectHunt/ProjectShowCase"
+import { ProjectShowCase } from "./dockAi/ProjectShowCase"
 
 
 export function SidebarRight({

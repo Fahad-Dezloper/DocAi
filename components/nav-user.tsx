@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/sidebar"
 
 import { ThemeToggle } from "./custom/theme-toggle"
-import { SignOutt } from "./projectHunt/SignOutt"
+import { SignOutt } from "./dockAi/SignOutt"
 
 
 export function NavUser({

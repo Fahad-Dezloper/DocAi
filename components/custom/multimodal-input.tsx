@@ -23,20 +23,20 @@ import { Textarea } from "../ui/textarea";
 
 const suggestedActions = [
   {
-    title: "Libraries for HTML5 Canvas",
-    action: "Libraries for HTML5 Canvas to help me draw",
+    title: "I am feeling a bit sick",
+    action: "I am feeling a bit sick",
   },
   {
-    title: "Pre-Build ReactJs Component",
-    action: "Pre-Build React Js Components whose code can be copy pasted",
+    title: "My Body more than my mind",
+    action: "My Body more than my mind",
   },
   {
-    title: "Viral Fun Tools",
-    action: "Viral Fun Tools on twitter right now like git wrapped",
+    title: "I think I have eye flu",
+    action: "I think I have eye flu",
   },
   {
-    title: "Gradient Genrator",
-    action: "Gradient generator like gradii.fun",
+    title: "Suggest me some Med for anxiety",
+    action: "Suggest me some Med for anxiety",
   },
 ];
 

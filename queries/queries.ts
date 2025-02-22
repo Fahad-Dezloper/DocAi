@@ -19,13 +19,13 @@ export async function getUser(email: string){
     }
 }
 
-export async function createUser(email: string, password: string){
+export async function createUser(email: string, password: string, role){
     let salt = genSaltSync(10);
     let hash = hashSync(password, salt);
     // saveSpace({"All", "👑"});
 
     try{
-        const res = await prisma.user.create({data: {email, password:hash}})
+        const res = await prisma.user.create({data: {email, password:hash, role}})
         // console.log("user created", res);
         saveSpace({spaceName: "All",spaceIcon: "👑",userId: res.id});
         return res

@@ -4,7 +4,7 @@ import {motion} from 'framer-motion'
 import { XIcon, RotateCcw } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
-import Loader from "../projectHunt/PopOverLoader";
+import Loader from "../dockAi/PopOverLoader";
 import Mansorygrid from "../ui/mansory-grid";
 
 // Global cache object (Persists even when component unmounts)

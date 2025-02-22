@@ -39,7 +39,7 @@ export function SidebarLeft({
   return (
     <Sidebar className="border-r-2 rounded-r-3xl overflow-hidden">
       <SidebarHeader>
-        <h1 className="truncate text-[2.4rem] font-semibold w-full text-center font-cabin">Project Hunt</h1>
+        <h1 className="truncate text-[2.4rem] font-semibold w-full text-center font-cabin">Doc Ai</h1>
         <div className="relative w-full max-w-sm">
       <Input
         type="search"

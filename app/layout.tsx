@@ -12,7 +12,7 @@ import "./globals.css";
 import { auth } from "./(auth)/auth";
 
 export const metadata: Metadata = {
-  title: "Project Hunt",
+  title: "Doc Ai",
   description: "ProjectHunt Place to find all your projects.",
 };
 

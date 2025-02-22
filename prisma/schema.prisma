@@ -12,6 +12,7 @@ model User {
   email    String    @unique
   name     String?
   password String
+  role     Role
   chat     Chat[]
   spaces   Spaces[]
 }
@@ -53,4 +54,9 @@ model ProjectSpace {
   createdAt DateTime @default(now())
 
   @@id([projectId, spaceId])
+}
+
+enum Role {
+  user
+  doctor
 }

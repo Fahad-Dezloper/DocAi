@@ -32,12 +32,13 @@ export function Chat({
     useScrollToBottom<HTMLDivElement>();
 
   return (
-    <div className="flex flex-row justify-center pb-4 md:pb-8 h-dvh border-2 rounded-3xl">
+    <div className="flex flex-row justify-center h-full border-2 rounded-3xl">
       <div className="flex flex-col justify-between w-full items-center gap-4">
         <div
           className={`flex flex-col gap-4 h-full items-center ${messages.length === 0 ? "max-w-[60vw]" : "w-[43vw]"} overflow-hidden overflow-y-scroll`}
         >
-          {messages.length === 0 && <Overview />}
+          {/* <Overview /> */}
+          {messages.length === 0 && "Show latest News on health"}
 
           {messages.map((message) => (
             <PreviewMessage
@@ -50,7 +51,7 @@ export function Chat({
           ))}
         </div>
 
-        <form className="flex flex-row gap-2 relative items-end px-4 md:px-0">
+        <form className="flex flex-row gap-2 relative items-end px-4 mb-4 md:px-0">
           <MultimodalInput
             input={input}
             setInput={setInput}

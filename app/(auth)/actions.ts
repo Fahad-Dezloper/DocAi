@@ -60,14 +60,14 @@ export const register = async (
       email: formData.get("email"),
       password: formData.get("password"),
     });
-
+    const role = formData.get("role") as string; 
     let user = await getUser(validatedData.email);
 
     if (user) {
       // console.log("user from action", user);
       return { status: "user_exists" } as RegisterActionState;
     } else {
-      await createUser(validatedData.email, validatedData.password);
+      await createUser(validatedData.email, validatedData.password, role);
       await signIn("credentials", {
         email: validatedData.email,
         password: validatedData.password,

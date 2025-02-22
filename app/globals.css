@@ -147,6 +147,7 @@
 
 body{
     overflow: hidden;
+    /* background-color: #cccccc; */
 }
 
 .overflow-y-scroll::-webkit-scrollbar{
@@ -178,3 +179,14 @@ body{
   /* .gradient2{
     background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 0%, hsla(199, 100%, 68%, 1) 100%);
   } */
+
+  
+
+  @layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
