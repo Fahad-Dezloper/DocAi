@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 import { Button } from '@/components/ui/button';
+import CalCom from '@/components/dockAi/CalCom';
 
 const Page = ({user}) => {
   const [account, setAccount] = useState(null);
@@ -193,7 +194,7 @@ const Page = ({user}) => {
         className="w-[18vw] rounded-2xl overflow-hidden flex flex-col gap-6 h-[38vh] bg-white shadow-lg transition-transform duration-300 hover:scale-105"
       >
         {/* Top Section with Avatar */}
-        <div className="w-full h-1/2 bg-blue-500 relative flex items-center justify-center">
+        <div className="w-full h-1/2 gradient relative flex items-center justify-center">
           <div className="w-24 h-24 border-4 border-white absolute bottom-[-30%] rounded-full bg-white flex items-center justify-center shadow-md">
             <img
               src={item.image || "/default-avatar.png"}
@@ -229,9 +230,9 @@ const Page = ({user}) => {
           </div>
       
           {/* Button */}
-          <Button className="mt-3 px-6 py-2 rounded-lg bg-blue-500 text-white flex gap-2 items-center hover:bg-blue-600">
-            Schedule <span className="font-semibold">${item.money}</span>
-          </Button>
+          {/* <Button className="mt-3 px-6 py-2 rounded-lg bg-blue-500 text-white flex gap-2 items-center hover:bg-blue-600"> */}
+            {/* Schedule <span className="font-semibold">{item.money}</span> */}
+            <CalCom />
         </div>
       </div>      
       ))}

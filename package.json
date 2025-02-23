@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "ethers": "^5.5.4",
     "@ai-sdk/google": "^0.0.51",
+    "@calcom/embed-react": "^1.5.2",
     "@google/generative-ai": "^0.21.0",
     "@neondatabase/serverless": "^0.10.4",
     "@prisma/client": "6.2.1",
@@ -42,11 +42,13 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
+    "crypto-js": "^4.2.0",
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.34.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
+    "ethers": "^5.5.4",
     "framer-motion": "^11.17.0",
     "geist": "^1.3.1",
     "input-otp": "^1.2.4",
