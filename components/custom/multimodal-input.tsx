@@ -21,14 +21,20 @@ import { Textarea } from "../ui/textarea";
 
 const suggestedActions = [
   {
-    title: "Help me book a flight",
-    label: "from San Francisco to London",
-    action: "Help me book a flight from San Francisco to London",
+    title: "I am feeling sick",
+    action: "I am feeling sick",
   },
   {
-    title: "What is the status",
-    label: "of flight BA142 flying tmrw?",
-    action: "What is the status of flight BA142 flying tmrw?",
+    title: "I think I have flu",
+    action: "I think I have flu",
+  },
+  {
+    title: "My body hurts more than my mind",
+    action: "My body hurts more than my mind",
+  },
+  {
+    title: "My heart tends to ache sometimes",
+    action: "My heart tends to ache sometimes",
   },
 ];
 

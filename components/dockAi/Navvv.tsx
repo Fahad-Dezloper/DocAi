@@ -33,10 +33,10 @@ const Navvv = ({user}) => {
         }]
   return (
     <div className='w-full flex items-center justify-center'>
-        <div className='flex gap-3 bg-[#4338CA] rounded-full mt-4 mb-3'>
+        <div className='flex gap-3 bg-[#90D9FC] text-black rounded-full mt-4 mb-3 overflow-hidden'>
             {/* {user} */}
             {navLink.map((item, i) => (
-                <Link key={i} href={item.link} className='py-2 px-4 text-white'>{item.name}</Link>
+                <Link key={i} href={item.link} className='py-4 px-6 hover:bg-[#B9E6FD] duration-200 ease-in-out'>{item.name}</Link>
             ))}
         </div>
     </div>

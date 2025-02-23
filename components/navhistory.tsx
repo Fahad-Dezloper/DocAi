@@ -91,7 +91,7 @@ export function NavHistory({user}) {
     <>
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       {user && (
-          <Link href="/" className="flex gap-3 items-center border justify-center py-2 px-4 rounded-xl bg-indigo-700 text-white hover:bg-indigo-600 duration-200">
+          <Link href="/" className="flex gap-3 items-center border justify-center py-2 px-4 rounded-xl bg-[#90D9FC] text-black hover:[#B9E6FD] duration-200">
                 <div>Search</div>
                 <SparklesIcon className="" />
           </Link>

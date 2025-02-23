@@ -32,7 +32,7 @@ export const Message = ({
 
       <div className={`flex flex-col gap-2 w-full  ${role == "assistant" ? "" : "items-end"}`}>
         {content && typeof content === "string" && (
-          <div className={`${role == "assistant" ? "" : "max-w-[30vw] p-2  border-r-2  border-blue-300 hover:rounded-xl hover:bg-gray-100 hover:text-black duration-200"}`}>{content}</div>
+          <div className={`${role == "assistant" ? "text-black" : "max-w-[30vw] p-2  border-r-[3px]  border-blue-300 font-semibold hover:rounded-xl hover:bg-gray-100 hover:text-black text-black duration-200"}`}>{content}</div>
         )}
 
         {toolInvocations && (

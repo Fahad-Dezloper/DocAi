@@ -44,7 +44,7 @@ export function Chat({
           className={`flex flex-col gap-4 h-full items-center overflow-y-auto ${messages.length === 0 ? "max-w-[60vw]" : "w-[43vw]"}`}
         ></div> */}
           {/* <Overview /> */}
-          {messages.length === 0 && "Show latest News on health"}
+          {messages.length === 0 && <Overview />}
 
           {messages.map((message) => (
             <PreviewMessage
@@ -52,6 +52,7 @@ export function Chat({
               chatId={id}
               role={message.role}
               content={message.content}
+              attachments={message.experimental_attachments}
               toolInvocations={message.toolInvocations}
             />
           ))}

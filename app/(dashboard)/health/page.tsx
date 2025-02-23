@@ -38,11 +38,13 @@ const Page = () => {
     }, []);
 
     return (
-        <div className="grid grid-cols-3 gap-y-6 gap-x-5 text-black flex-wrap h-[80vh] overflow-y-scroll">
+        // grid grid-cols-3 text-black flex-wrap overflow-y-scroll
+        <div className="flex flex-row justify-center pb-2 border overflow-y-scroll py-3 rounded-2xl h-[88vh] ">
+        <div className="w-full h-fit overflow-y-scroll columns-3xs px-6">
     {news && news.map((item) => (
+        <div key={item.article_id} className='w-[18vw] h-fit rounded-xl overflow-hidden mt-4 relative'>
         <div 
-            key={item.article_id} 
-            className="h-[40vh] w-[22vw] bg-white scale-90 shadow-lg rounded-lg overflow-hidden"
+            className={`${item.image_url ? "min-h-[25vh]" : "min-h-[20vh]"} flex bg-white text-black flex-col z-[30] justify-between`}
         >
             {/* Image */}
             <div className="w-full h-[50%]">
@@ -61,8 +63,9 @@ const Page = () => {
                 </div>
             </div>
         </div>
+        </div>
     ))}
-    <h1>India</h1>
+</div>
 </div>
     );
 }

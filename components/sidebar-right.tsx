@@ -16,9 +16,8 @@ import {
 } from "@/components/ui/sidebar"
 import {DataProvider } from "@/provider/spaceContext"
 
-import MainPopover from "./main-popover"
 import { ProjectShowCase } from "./dockAi/ProjectShowCase"
-
+import MainPopover from "./main-popover"
 
 export function SidebarRight({
   user
@@ -35,7 +34,8 @@ export function SidebarRight({
       <SidebarContent className="">
         <ProjectShowCase />
         <div className="w-full flex justify-center items-center mt-4">
-        <MainPopover />
+        {/* <ConnectWallet /> */}
+        {/* <MainPopover /> */}
         </div>
         <Spaces />
       </SidebarContent>

@@ -37,9 +37,9 @@ export function SidebarLeft({
   user
 }: {user: User | undefined} ) {
   return (
-    <Sidebar className="border-r-2 rounded-r-3xl overflow-hidden">
+    <Sidebar className="border-r-2 rounded-r-3xl overflow-hidden ">
       <SidebarHeader>
-        <h1 className="truncate text-[2.4rem] font-semibold w-full text-center font-cabin">Doc Ai</h1>
+        <h1 className="truncate text-[2.4rem] font-bold w-full text-center">Doc Ai</h1>
         <div className="relative w-full max-w-sm">
       <Input
         type="search"

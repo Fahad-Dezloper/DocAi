@@ -10,6 +10,7 @@ import { Cabin_Sketch , Roboto } from "next/font/google";
 
 import "./globals.css";
 import { auth } from "./(auth)/auth";
+import WalletProvider from "@/components/WalletProvider";
 
 export const metadata: Metadata = {
   title: "Doc Ai",
@@ -49,7 +50,7 @@ export default async function RootLayout({
             <DataProvider>
               <main className="flex gap-2 w-screen">
                 {/* <SidebarLeft user={session?.user} /> */}
-                <div className="w-full">{children}</div>
+                  <div className="w-full">{children}</div>
                 {/* <SidebarRight user={session?.user} /> */}
               </main>
             </DataProvider>

@@ -43,7 +43,7 @@ export async function POST(request: Request) {
           Identify the medicine name, its common uses, and side effects (if possible).
           Warn the user: "I can provide general information, but for dosage or safety, consult a doctor or pharmacist."
           For X-ray or medical report images:
-          "I can give general insights, but interpreting X-rays requires a radiologist. It's best to have a doctor review this for accurate diagnosis."
+          analyze the image perfectly and tell the user about what you can interpret from the X-ray or medical report images. always give response for the X-ray or medical report images try to give your best response
           For serious conditions (e.g., severe pain, difficulty breathing, stroke symptoms): Explain risks and suggest urgent medical attention if necessary.
           Step 3: Determine If Doctor Advice Is Necessary
           Goal: Recommend a doctor only if truly needed.

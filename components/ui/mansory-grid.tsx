@@ -6,9 +6,10 @@ import Link from "next/link";
 
 const imageCache = {};
 
-const Mansorygrid = ({ name, website, builder }) => {
+const Mansorygrid = ({ name, brief, details }) => {
   const [loading, setLoading] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
+  const [PopOver, showPopOver] = useState(false);
 
   const [boxColor] = useState(() => {
     const colors = [
@@ -22,44 +23,6 @@ const Mansorygrid = ({ name, website, builder }) => {
     return colors[Math.floor(Math.random() * colors.length)];
   });
 
-  const fetchPreviewImage = async () => {
-    // Check if image is already cached
-    if (imageCache[website]) {
-      console.log("Using cached image for:", website);
-      setPreviewImage(imageCache[website]);
-      return;
-    }
-
-    setLoading(true);
-    setPreviewImage("");
-
-    try {
-      console.log("Fetching new preview image for:", website);
-      const response = await fetch("/api/scrapePreview", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ website }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        imageCache[website] = result.imageUrl; // Cache the image globally
-        setPreviewImage(result.imageUrl);
-      } else {
-        console.error("Error fetching preview image");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (website) {
-      fetchPreviewImage();
-    }
-  }, [website]);
 
   return (
     <WobbleCard
@@ -73,7 +36,7 @@ const Mansorygrid = ({ name, website, builder }) => {
         <div className="flex gap-1 items-center">
           <CornerDownRightIcon />
           <h4 className="text-xs px-3 py-1 bg-gray-600 hover:bg-gray-700 cursor-pointer rounded-full mt-1">
-            {builder}
+            {brief}
           </h4>
         </div>
       </div>
@@ -83,24 +46,17 @@ const Mansorygrid = ({ name, website, builder }) => {
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.2 }}
       >
-        <Link
-          href={website}
-          target="_blank"
-          className="flex gap-1 text-lg z-[40] cursor-pointer hover:gap-3 duration-200 ease-in-out items-center"
+        <div
+          className="flex flex-col gap-1 text-lg z-[40] cursor-pointer hover:gap-3 duration-200 mt-4 ease-in-out items-center"
         >
-          Try Now <ArrowRight size={20} />
-        </Link>
-      </motion.div>
-
-      {previewImage && (
-        <div className="absolute -right-1 -bottom-1 rounded-t-md w-[15vw] h-[16vh] overflow-hidden">
-          <img
-            src={previewImage}
-            alt="Website Preview"
-            className="object-cover w-full h-full"
-          />
+         {details.map((detail, index) => (
+            <li key={index} className="flex items-start">
+              <span className="mr-2 text-green-500">✔</span> {/* Check icon */}
+              {detail}
+            </li>
+          ))}
         </div>
-      )}
+      </motion.div>
     </WobbleCard>
   );
 };
